@@ -9,8 +9,8 @@ namespace UserTaskRESTService.Models
     public class PostTaskResponse
     {
 
+        public int status { get; set; }
         public String message { get; set; }
-
         public NewTask details { get; set; }
 
     }

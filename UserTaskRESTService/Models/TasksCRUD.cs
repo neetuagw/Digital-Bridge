@@ -41,6 +41,7 @@ namespace UserTaskRESTService.Models
                     //Creating a response to send to client
                     PostTaskResponse response = new PostTaskResponse();
                     NewTask newTask = new NewTask();
+                    response.status = 200;
                     response.message = "Successfully created";
                     newTask.id = task.id;
                     newTask.title = task.title;
