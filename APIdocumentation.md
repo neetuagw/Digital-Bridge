@@ -55,7 +55,8 @@ Retrieve List of tasks of specified User, passing user Id in URL
 > Response `200`
 
      `{
-        	message: "Successfully created"
+        	status: 200,
+		message: "Successfully created"
         	details : {
 	        	"id":1,	
 	        	"title":"Chhan",
@@ -98,7 +99,7 @@ API will send the following response in case of providing unknown task id
 
      `{
         "status": 404,
-        "errorMessage": "No task found with ID = x"
+        "error": "No task found with ID = x"
       }`
 
 ## Update a Task
@@ -134,7 +135,7 @@ API will send the following response in case of providing unknown task id
 
      `{
         "status": 404,
-        "errorMessage": "No task found with ID = x"
+        "error": "No task found with ID = x"
       }`
 
 ## Delete a Task
@@ -146,8 +147,8 @@ API will send the following response in case of providing unknown task id
 > Response `200`
 
      `{
-		"status": 200,
-	    "message": "Successfully deleted"
+	"status": 200,
+	"message": "Successfully deleted"
       }`
 
 > Response `404`
@@ -155,5 +156,5 @@ API will send the following response in case of providing unknown task id
 
      `{
         "status": 404,
-        "errorMessage": "No task found with ID = x"
+        "error": "No task found with ID = x"
       }`
