@@ -81,12 +81,12 @@ API will send the following response if the required attribut is missing from th
 > Response `200`
 
      `{
-	"id":1,	
-	"title":"Contact Plumber",
-	"description": "Contact plumber to arrange removing old shower control",
-	"isCompleted" : false
-	"created": "2019-02-20T13:02:22.2740218+00:00",
-	"due": "0001-01-01T00:00:00"
+		"id":1,	
+		"title":"Contact Plumber",
+		"description": "Contact plumber to arrange removing old shower control",
+		"isCompleted" : false
+		"created": "2019-02-20T13:02:22.2740218+00:00",
+		"due": "0001-01-01T00:00:00"
       }`
 
 > Response `404`
@@ -142,7 +142,7 @@ API will send the following response in case of providing unknown task id
 > Response `200`
 
      `{
-	"message": "Successfully deleted"
+		"message": "Successfully deleted"
       }`
 
 > Response `404`
