@@ -37,5 +37,4 @@ Visual Studio 2017 Community, Professional or Enterprise Edition
 
 ## Test the REST Service
 
-I have created a Test project "UserTask-Tests" within this solution to test the REST APIs.
-To run the tests, select the UserTask-Tests and in your Visual Stuido menu bar, Select Test > Run > All Tests.  
+To test this service , run the test project "UserTask-tests". To run the tests, select the UserTask-Tests and in your Visual Stuido menu bar, Select Test > Run > All Tests.  
