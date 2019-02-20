@@ -1,0 +1,14 @@
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\bin\Debug\netcoreapp2.1\UserTaskRESTService.deps.json
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\bin\Debug\netcoreapp2.1\UserTaskRESTService.runtimeconfig.json
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\bin\Debug\netcoreapp2.1\UserTaskRESTService.runtimeconfig.dev.json
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\bin\Debug\netcoreapp2.1\UserTaskRESTService.dll
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\bin\Debug\netcoreapp2.1\UserTaskRESTService.pdb
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.csprojAssemblyReference.cache
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.csproj.CoreCompileInputs.cache
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.RazorAssemblyInfo.cache
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.RazorAssemblyInfo.cs
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.AssemblyInfoInputs.cache
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.AssemblyInfo.cs
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.RazorTargetAssemblyInfo.cache
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.dll
+C:\Users\neetu\source\repos\BIP\UserTaskRESTService\obj\Debug\netcoreapp2.1\UserTaskRESTService.pdb
