@@ -19,8 +19,6 @@ namespace UserTaskRESTService.Models
 
         public String description { get; set; }
 
-        public String status { get; set; }
-
         public DateTime created { get; set; }
 
         public Boolean isCompleted { get; set; }

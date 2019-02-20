@@ -32,7 +32,6 @@ namespace UserTaskRESTService.Models
         {
         
             task.created = DateTime.Now;
-            task.status = "todo";
             task.isCompleted = false;
             taskList.Add(task);
 
@@ -43,7 +42,7 @@ namespace UserTaskRESTService.Models
             newTask.id = task.id;
             newTask.title = task.title;
             newTask.description = task.description;
-            newTask.status = task.status;
+            newTask.isCompleted = task.isCompleted;
             newTask.created = task.created;
             newTask.due = task.due;
             response.details = newTask;
