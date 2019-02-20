@@ -12948,11 +12948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTaskRESTService\\UserTaskRESTService.csproj",
+      "projectUniqueName": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTaskRESTService\\UserTaskRESTService.csproj",
       "projectName": "UserTaskRESTService",
-      "projectPath": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTaskRESTService\\UserTaskRESTService.csproj",
+      "projectPath": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTaskRESTService\\UserTaskRESTService.csproj",
       "packagesPath": "C:\\Users\\neetu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTaskRESTService\\obj\\",
+      "outputPath": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTaskRESTService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

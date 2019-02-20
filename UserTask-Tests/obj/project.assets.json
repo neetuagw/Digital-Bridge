@@ -14512,11 +14512,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTask-Tests\\UserTask-Tests.csproj",
+      "projectUniqueName": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTask-Tests\\UserTask-Tests.csproj",
       "projectName": "UserTask-Tests",
-      "projectPath": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTask-Tests\\UserTask-Tests.csproj",
+      "projectPath": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTask-Tests\\UserTask-Tests.csproj",
       "packagesPath": "C:\\Users\\neetu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTask-Tests\\obj\\",
+      "outputPath": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTask-Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14535,8 +14535,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\neetu\\source\\repos\\BIP\\UserTaskRESTService\\UserTaskRESTService.csproj": {
-              "projectPath": "C:\\Users\\neetu\\source\\repos\\BIP\\UserTaskRESTService\\UserTaskRESTService.csproj"
+            "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTaskRESTService\\UserTaskRESTService.csproj": {
+              "projectPath": "C:\\Users\\neetu\\source\\Digital-Bridge\\UserTaskRESTService\\UserTaskRESTService.csproj"
             }
           }
         }
