@@ -29,7 +29,6 @@ Call following API to check the status of the service
 - id  `(Number)`  : unique identifier
 - title `(String)`  : Task Name
 - description `(String)`  : Description of the Task
-- status `(String)`  : Status of the Task : todo or completed or deleted. 
 - isCompleted `(boolean)` : Task completed or not
 - created `(DateTime)` : Date and time when task is created
 - due `(DateTime)` : Due Date and time of task completion
@@ -61,8 +60,8 @@ Retrieve List of tasks of specified User, passing user Id in URL
 	        	"id":1,	
 	        	"title":"Chhan",
 	        	"description": "Trying my best",
-	        	"status": "todo",
 		        "created": "2019-02-20T13:02:22.2740218+00:00",
+			"isCompleted" : false,
 		        "due": "0001-01-01T00:00:00"
         	}
         }`
@@ -88,7 +87,6 @@ API will send the following response if the required attribut is missing from th
 	        	"id":1,	
 	        	"title":"Contact Plumber",
 	        	"description": "Contact plumber to arrange removing old shower control",
-	        	"status": "todo",
 	        	"isCompleted" : false
 		        "created": "2019-02-20T13:02:22.2740218+00:00",
 		        "due": "0001-01-01T00:00:00"
@@ -125,7 +123,6 @@ API will send the following response in case of providing unknown task id
 	        	"id":1,	
 	        	"title":"Chnage it",
 	        	"description": "Update the task with id 1",
-	        	"status": "todo",
 	        	"ïsCompleted" : true,
 		        "created": "2019-02-20T13:02:22.2740218+00:00",
 		        "due": "0001-01-01T00:00:00"
