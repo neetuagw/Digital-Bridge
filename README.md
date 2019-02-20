@@ -34,3 +34,8 @@ Visual Studio 2017 Community, Professional or Enterprise Edition
  - In your Visual Studio menu bar, you can see a green arrow button "IIS Express". Here you can select a browser installed in your system and click it. It will start your web server and run this web service application on localhost.
  - By default, this service will run the "/api/home" API
  - Please follow the APIdocumentation.md file to call other URLs. 
+
+## Test the REST Service
+
+I have created a Test project "UserTask-Tests" within this solution to test the REST APIs.
+To run the tests, select the UserTask-Tests and in your Visual Stuido menu bar, Select Test > Run > All Tests.  
