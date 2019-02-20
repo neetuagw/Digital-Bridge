@@ -1,7 +1,8 @@
-﻿using System;
+﻿/* LoadData is a static class which stores resource data in memory. 
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace UserTaskRESTService.Models
 {

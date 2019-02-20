@@ -1,7 +1,10 @@
-﻿using System;
+﻿/*
+ * All the CRUD opeartions to be performed on Tasks resource have been implemented in this class. 
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace UserTaskRESTService.Models
 {
@@ -34,6 +37,7 @@ namespace UserTaskRESTService.Models
             {
                 if (! t.id.Equals(task.id))
                 {
+                    //Setup some default values onn creation of a new task
                     task.created = DateTime.Now;
                     task.isCompleted = false;
                     LoadData.tasksList.Add(task);
@@ -46,7 +50,6 @@ namespace UserTaskRESTService.Models
                     newTask.id = task.id;
                     newTask.title = task.title;
                     newTask.description = task.description;
-                    newTask.isCompleted = task.isCompleted;
                     newTask.created = task.created;
                     newTask.due = task.due;
                     response.details = newTask;
@@ -60,7 +63,6 @@ namespace UserTaskRESTService.Models
         //Method to get the list of all the user tasks
         public List<Tasks> getAllTasks()
         {
-            //return taskList;
             return LoadData.tasksList;
         }
 

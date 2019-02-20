@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿/*
+ * This class will be used to generate responses as per the HTTP requests
+ */
+
+using System;
 
 namespace UserTaskRESTService.Models
 {
@@ -23,8 +23,6 @@ namespace UserTaskRESTService.Models
 
         public String description { get; set; }
 
-        public Boolean isCompleted { get; set; }
-
         public DateTime created { get; set; }
 
         public DateTime due { get; set; }
@@ -33,7 +31,6 @@ namespace UserTaskRESTService.Models
     public class PutTaskResponse
     {
         public String message { get; set; }
-
         public Tasks details { get; set; }
 
     }

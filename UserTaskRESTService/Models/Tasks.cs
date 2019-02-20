@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿/*
+ * Task resource class with all fields 
+ */
+
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace UserTaskRESTService.Models

@@ -1,8 +1,10 @@
-﻿using System;
+﻿/*
+ * TasksController class has defined all the CRUD operations for Tasks entity 
+*/
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UserTaskRESTService.Models;
 
@@ -12,12 +14,11 @@ namespace UserTaskRESTService.Controllers
     [ApiController]
     public class TasksController : ControllerBase
     {
-        //TasksCRUD crud = new TasksCRUD();
-
+        
+        //Get api/Tasks
         public List<Tasks> GetAllTasks()
         {
             List<Tasks> taskList = TasksCRUD.getInstance().getAllTasks();
-            //taskList = TasksCRUD.getInstance.getAllTasks();
             return taskList;
         }
 
@@ -25,10 +26,12 @@ namespace UserTaskRESTService.Controllers
         [HttpPost]
         public ActionResult PostNewTask([FromBody]Tasks request)
         {
+            //Checking if any required fields are missing
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
             PostTaskResponse response = new PostTaskResponse();
             response = TasksCRUD.getInstance().AddTask(request);
             if(response is null)
@@ -55,11 +58,7 @@ namespace UserTaskRESTService.Controllers
             }
             else
             {
-                return Ok(new
-                {
-                    status = HttpStatusCode.OK,
-                    Task = task
-                });
+                return Ok(task);
             }
         }
 
@@ -78,7 +77,6 @@ namespace UserTaskRESTService.Controllers
             else
             {
                 return Ok(new {
-                    status = HttpStatusCode.OK,
                     message = "Successfully updated",
                     details = updatedTask
                 });
@@ -94,7 +92,6 @@ namespace UserTaskRESTService.Controllers
             if(status is true)
             {
                 return Ok(new {
-                    status = HttpStatusCode.OK,
                     message = "Successfully deleted"
                 });
             }

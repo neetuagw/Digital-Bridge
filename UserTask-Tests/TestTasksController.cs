@@ -1,8 +1,10 @@
+/* This is the test class to test services defined in TasksController
+ */
+
 using System;
 using Xunit;
 using UserTaskRESTService.Controllers;
 using UserTaskRESTService.Models;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UserTask_Tests
@@ -10,15 +12,6 @@ namespace UserTask_Tests
     public class TestTasksController
     {
         TasksController controller;
-
-        //Create List of fake tasks for testing purpose
-        private void setTestTasks()
-        {
-            TasksCRUD.getInstance().AddTask(new Tasks { id = 1, title = "Contact Plumber", description = "Contact plumber to arrange removing my old shower control", created = DateTime.Now, isCompleted = true });
-            TasksCRUD.getInstance().AddTask(new Tasks { id = 2, title = "Take the dimensions", description = "Take the bathtub dimensions", created = DateTime.Now, isCompleted = false });
-            TasksCRUD.getInstance().AddTask(new Tasks { id = 3, title = "Choose the tiles colour", description = "Finalise the colour for bathroom tiles", created = DateTime.Now, isCompleted = false });
-            TasksCRUD.getInstance().AddTask(new Tasks { id = 4, title = "Take the dimensions", description = "Take the bathtub dimensions", created = DateTime.Now, isCompleted = false });
-        }
 
         public TestTasksController()
         {
@@ -28,45 +21,56 @@ namespace UserTask_Tests
         [Fact]
         public void GetAllTasks_WhenCalled_ReturnsAllTasks()
         {
-
+            //Arrange
             var testTasks = LoadData.tasksList;
 
+            //Act
             var result = controller.GetAllTasks();
 
+            //Assert
             Assert.Equal(testTasks.Count, result.Count);
         }
 
         [Fact]
         public void GetTaskByID_ExistingIDPassed_ReturnsRightTask()
         {
-
+            //Arrange
             var testTasks = TasksCRUD.getInstance().getTaskById(1);
 
-            var okResponse = controller.GetTaskById(1);
+            //Act
+            var okResponse = controller.GetTaskById(1) as OkObjectResult;
+            var result = okResponse.Value as Tasks;
 
+            //Assert
             Assert.IsType<OkObjectResult>(okResponse);
+            Assert.Equal("Contact Plumber", result.title);
         }
 
         [Fact]
         public void GetTaskByID_UnknownIDPassed_ReturnsNotFoundResult()
         {
-            //setTestTasks();
+            //Act
             var result = controller.GetTaskById(6);
+
+            //Assert
             Assert.IsType<NotFoundObjectResult>(result);
         }
 
         [Fact]
         public void PostNewTask_ObjectPassedWithMissingValue_ReturnsBadRequest()
         {
-            //setTestTasks();
+            //Arrange
             var newTask = new Tasks()
             {
                 id = 5,
                 description = "This",
             };
             controller.ModelState.AddModelError("title", "Required");
+
+            //Act
             var result = controller.PostNewTask(newTask);
 
+            //Assert
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
@@ -74,7 +78,6 @@ namespace UserTask_Tests
         public void PostNewTask_ValidObjectPassed_ReturnedResponseHasCreatedTask()
         {
             //Arrange
-            setTestTasks();
             var newTask = new Tasks()
             {
                 id = 5,
@@ -94,7 +97,7 @@ namespace UserTask_Tests
         [Fact]
         public void Update_NotExistingIDPassed_ReturnsNotFoundResponse()
         {
-            //setTestTasks();
+            //Arrange
             var updatedTask = new Tasks()
             {
                 id = 101,
@@ -102,14 +105,17 @@ namespace UserTask_Tests
                 description = "Finalise the tiles colour of the bathroom",
             };
 
+            //Act
             var result = controller.Update(101, updatedTask);
+
+            //Assert
             Assert.IsType<NotFoundObjectResult>(result);
         }
 
         [Fact]
         public void Update_ExistingIDPassed_Returns()
         {
-            //setTestTasks();
+            //Arrange
             var updatedTask = new Tasks()
             {
                 id = 1,
@@ -117,25 +123,28 @@ namespace UserTask_Tests
                 description = "Finalise the tiles colour of the bathroom",
             };
 
-            var okResponse = controller.Update(1, updatedTask);
+            //Act
+            var result = controller.Update(1, updatedTask);
 
             //Assert
-            Assert.IsType<OkObjectResult>(okResponse);
+            Assert.IsType<OkObjectResult>(result);
         }
 
         [Fact]
         public void Delete_NotExistingIDPassed_ReturnsNotFoundResponse()
         {
-            setTestTasks();
+            //Act
             var result = controller.Delete(6);
+            //Assert
             Assert.IsType<NotFoundObjectResult>(result);
         }
 
         [Fact]
         public void Delete_ExistingIDPassed_ReturnsOkResult()
         {
-            setTestTasks();
+            //Act
             var result = controller.Delete(3);
+            //Assert
             Assert.IsType<OkObjectResult>(result);
         }
     }

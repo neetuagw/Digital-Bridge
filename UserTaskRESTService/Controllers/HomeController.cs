@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿/*
+ * HomeController class will call upon by default on running this service. 
+*/
+
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UserTaskRESTService.Controllers
