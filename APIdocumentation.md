@@ -43,7 +43,9 @@ Retrieve List of tasks of specified User, passing user Id in URL
 ## Create a Task
 
 > POST `https://localhost:XXXXX/api/user/1234/Tasks`
+
 > Parameters `null`
+
 > Request Body
 
      `{
@@ -75,6 +77,7 @@ API will send the following response if the required attribut is missing from th
 ## Retrieve a Task
 
 > GET `https://localhost:XXXXX/api/user/1234/Tasks/id`
+
 > Parameters `id`
 
 > Response `200`
@@ -103,7 +106,9 @@ API will send the following response in case of providing unknown task id
 ## Update a Task
 
 > PUT `https://localhost:XXXXX/api/user/1234/Tasks/id`
+
 > Parameters `id`
+
 > Request Body
 
      `{
@@ -121,7 +126,7 @@ API will send the following response in case of providing unknown task id
 	        	"title":"Chnage it",
 	        	"description": "Update the task with id 1",
 	        	"status": "todo",
-	        	"ïsCompleted" : true,
+	        	"Ã¯sCompleted" : true,
 		        "created": "2019-02-20T13:02:22.2740218+00:00",
 		        "due": "0001-01-01T00:00:00"
         	}
@@ -138,6 +143,7 @@ API will send the following response in case of providing unknown task id
 ## Delete a Task
 
 > DELETE `https://localhost:XXXXX/api/user/1234/Tasks/id`
+
 > Parameters `id`
 
 > Response `200`
