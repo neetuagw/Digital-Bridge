@@ -7,13 +7,13 @@ namespace UserTaskRESTService.Models
 {
     public class TasksCRUD
     {
-        List<Tasks> taskList;
 
         static TasksCRUD crud = null;
+
         private TasksCRUD()
         {
-            taskList = new List<Tasks>();
         }
+
         public static TasksCRUD getInstance()
         {
             if (crud == null)
@@ -30,42 +30,50 @@ namespace UserTaskRESTService.Models
         //Method to add new task
         public PostTaskResponse AddTask(Tasks task)
         {
-        
-            task.created = DateTime.Now;
-            task.isCompleted = false;
-            taskList.Add(task);
+            foreach(Tasks t in LoadData.tasksList)
+            {
+                if (! t.id.Equals(task.id))
+                {
+                    task.created = DateTime.Now;
+                    task.isCompleted = false;
+                    LoadData.tasksList.Add(task);
 
-            //Creating a response to send to client
-            PostTaskResponse response = new PostTaskResponse();
-            NewTask newTask = new NewTask();
-            response.message = "Successfully created";
-            newTask.id = task.id;
-            newTask.title = task.title;
-            newTask.description = task.description;
-            newTask.isCompleted = task.isCompleted;
-            newTask.created = task.created;
-            newTask.due = task.due;
-            response.details = newTask;
+                    //Creating a response to send to client
+                    PostTaskResponse response = new PostTaskResponse();
+                    NewTask newTask = new NewTask();
+                    response.message = "Successfully created";
+                    newTask.id = task.id;
+                    newTask.title = task.title;
+                    newTask.description = task.description;
+                    newTask.isCompleted = task.isCompleted;
+                    newTask.created = task.created;
+                    newTask.due = task.due;
+                    response.details = newTask;
 
-            return response;
+                    return response;
+                }
+            }
+            return null;
         }
 
         //Method to get the list of all the user tasks
         public List<Tasks> getAllTasks()
         {
-            return taskList;
+            //return taskList;
+            return LoadData.tasksList;
         }
 
 
         //Method to get the specific Task details
         public Tasks getTaskById(int id)
         {
-            for(int i = 0; i < taskList.Count; i++)
+            List<Tasks> tasksList = LoadData.tasksList;
+            for(int i = 0; i < tasksList.Count; i++)
             {
-                Tasks task = taskList.ElementAt(i);
+                Tasks task = tasksList.ElementAt(i);
                 if (task.id.Equals(id))
                 {
-                    return taskList[i];
+                    return tasksList[i];
                 }
             }
             return null;
@@ -74,13 +82,14 @@ namespace UserTaskRESTService.Models
         //Method to update the Task record
         public Tasks UpdateTask(Tasks updatedTask , int id)
         {
-            for(int i = 0; i < taskList.Count; i++)
+            List<Tasks> tasksList = LoadData.tasksList;
+            for (int i = 0; i < tasksList.Count; i++)
             {
-                Tasks task = taskList.ElementAt(i);
+                Tasks task = tasksList.ElementAt(i);
                 if (task.id.Equals(id))
                 {
-                    taskList[i] = updatedTask;
-                    return taskList[i];
+                    tasksList[i] = updatedTask;
+                    return tasksList[i];
                 }
             }
 
@@ -90,12 +99,13 @@ namespace UserTaskRESTService.Models
         //Method to delete a task
         public Boolean DeleteTask(int id)
         {
-            for (int i = 0; i < taskList.Count; i++)
+            List<Tasks> tasksList = LoadData.tasksList;
+            for (int i = 0; i < tasksList.Count; i++)
             {
-                Tasks task = taskList.ElementAt(i);
+                Tasks task = tasksList.ElementAt(i);
                 if (task.id.Equals(id))
                 {
-                    taskList.RemoveAt(i);
+                    tasksList.RemoveAt(i);
                     return true;
                 }
             }

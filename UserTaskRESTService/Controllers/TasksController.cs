@@ -31,6 +31,13 @@ namespace UserTaskRESTService.Controllers
             }
             PostTaskResponse response = new PostTaskResponse();
             response = TasksCRUD.getInstance().AddTask(request);
+            if(response is null)
+            {
+                return  BadRequest( new {
+                    status = HttpStatusCode.BadRequest,
+                    error = (string.Format("Task with id {0} is already found", request.id)),
+                });
+            }
             return CreatedAtAction("GetTaskById", new {id = response.details.id }, response);
         }
 
@@ -43,7 +50,7 @@ namespace UserTaskRESTService.Controllers
             {
                 return NotFound(new {
                     status = HttpStatusCode.NotFound,
-                    errorMessage  = string.Format("No task found with ID = {0}", id)
+                    error  = string.Format("No task found with ID = {0}", id)
                 });
             }
             else
@@ -65,7 +72,7 @@ namespace UserTaskRESTService.Controllers
             {
                 return NotFound(new {
                     status = HttpStatusCode.NotFound,
-                    errorMessage = string.Format("No task found with ID = {0}", id)
+                    error = string.Format("No task found with ID = {0}", id)
                 });
             }
             else
@@ -95,7 +102,7 @@ namespace UserTaskRESTService.Controllers
             {
                 return NotFound(new {
                     status = HttpStatusCode.NotFound,
-                    errorMessage = string.Format("No task found with ID = {0}", id)
+                    error = string.Format("No task found with ID = {0}", id)
                 });
             }
         }
